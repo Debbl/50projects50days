@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Expanding Cards</title>
+    <style>
+      @import url("https://fonts.googleapis.com/css?family=Muli&display=swap");
+      body {
+        font-family: "Muli", sans-serif;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        overflow: hidden;
+        margin: 0;
+      }
+      .container {
+        display: flex;
+        width: 90vw;
+      }
+      .panel {
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        height: 80vh;
+        border-radius: 50px;
+        color: #fff;
+        cursor: pointer;
+        flex: 1;
+        margin: 10px;
+        position: relative;
+        transition: all 0.7s ease-in;
+      }
+      .panel h3 {
+        font-size: 24px;
+        position: absolute;
+        bottom: 20px;
+        left: 20px;
+        margin: 0;
+        opacity: 0;
+      }
+
+      .panel.active {
+        flex: 10;
+      }
+      .panel.active h3 {
+        opacity: 1;
+        transition: opacity 0.3s ease-in 0.4s;
+      }
+
+      @media (max-width: 480px) {
+        .container {
+          width: 100vw;
+        }
+        .panel:nth-child(4),
+        .panel:nth-child(5) {
+          display: none;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container"></div>
+    <script>
+      const DATA = [
+        {
+          title: "Explore The World",
+          imgURL: "./assets/images/1.avif",
+        },
+        {
+          title: "Wild Forest",
+          imgURL: "./assets/images/2.avif",
+        },
+        {
+          title: "Sunny Beach",
+          imgURL: "./assets/images/3.avif",
+        },
+        {
+          title: "City on Winter",
+          imgURL: "./assets/images/4.avif",
+        },
+        {
+          title: "Mountains - Clouds",
+          imgURL: "./assets/images/5.avif",
+        },
+      ];
+
+      const containEl = document.querySelector(".container");
+      DATA.forEach((d) => {
+        const divEl = document.createElement("div");
+        divEl.classList.add("panel");
+        divEl.style.backgroundImage = `url(${d.imgURL})`;
+
+        const h3El = document.createElement("h3");
+        h3El.textContent = d.title;
+
+        divEl.appendChild(h3El);
+        containEl.appendChild(divEl);
+      });
+
+      const panels = document.querySelectorAll(".panel");
+      panels[0].classList.add("active");
+
+      panels.forEach((panel) => {
+        panel.addEventListener("click", () => {
+          removeActiveClasses();
+          panel.classList.add("active");
+        });
+      });
+
+      function removeActiveClasses() {
+        panels.forEach((panel) => {
+          panel.classList.remove("active");
+        });
+      }
+    </script>
+  </body>
+</html>
