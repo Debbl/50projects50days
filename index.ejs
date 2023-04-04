@@ -10,12 +10,9 @@
   <body>
     <div>
       <ul>
-        <% names.forEach((name) => { %>
+        <% projectsInfo.forEach((info) => { %>
         <li>
-          <a href="./<%= name %>"
-            ><%= name.split("-").map(w => w[0].toUpperCase() +
-            w.substring(1)).join(" ") %></a
-          >
+          <a href="./<%= info.path %>"><%= info.title %></a>
         </li>
         <% }); %>
       </ul>
