@@ -8,3 +8,5 @@
 
 - [Expanding Cards](https://50.aiwan.run/expanding-cards/)
 - [Progress Steps](https://50.aiwan.run/progress-steps/)
+- [Rotating Navigation](https://50.aiwan.run/rotaing-nav-animation/)
+- [Hidden Search](https://50.aiwan.run/hidden-search/)
