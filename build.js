@@ -2,14 +2,17 @@ const path = require("path");
 const fs = require("fs");
 const ejs = require("ejs");
 const { parse } = require("node-html-parser");
+const { minify } = require("html-minifier-terser");
 
 const pagesPath = path.resolve(__dirname, "./src/pages");
 const distPath = path.resolve(__dirname, "dist");
-const indexPath = path.resolve(__dirname, "index.ejs");
+const publicPath = path.relative(__dirname, "public");
+const indexPath = path.resolve(publicPath, "index.ejs");
 
 function init() {
   // write
   copyDir(pagesPath, distPath);
+  copyDir(publicPath, distPath);
   // generate index.html
   const projectNames = fs.readdirSync(pagesPath);
   const projectsInfo = projectNames.map((p) => {
@@ -23,7 +26,9 @@ function init() {
   });
 
   ejs.renderFile(indexPath, { projectsInfo }, {}, (err, str) => {
-    fs.writeFileSync(path.join(distPath, "index.html"), str);
+    minify(str, { collapseWhitespace: true, minifyCSS: true, minifyJS: true }).then((s) => {
+      fs.writeFileSync(path.join(distPath, "index.html"), s);
+    });
   });
 }
 
@@ -32,6 +37,8 @@ function copy(src, dest) {
   if (stat.isDirectory()) {
     copyDir(src, dest);
   } else {
+    const basename = path.basename(src);
+    if (basename === "index.ejs" || basename.startsWith(".")) return;
     fs.copyFileSync(src, dest);
   }
 }
