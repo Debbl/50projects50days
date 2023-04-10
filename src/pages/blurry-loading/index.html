@@ -22,8 +22,7 @@
       }
 
       .bg {
-        background: url("https://images.unsplash.com/photo-1576161787924-01bb08dad4a4?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2104&q=80")
-          no-repeat center center/cover;
+        background: url("./assets/images/01.avif") no-repeat center center/cover;
         position: absolute;
         top: -30px;
         left: -30px;
@@ -40,7 +39,7 @@
     </style>
   </head>
   <body>
-    <select class="bg"></select>
+    <div class="bg"></div>
     <div class="loading-text"></div>
     <script>
       const loadText = document.querySelector(".loading-text");
@@ -56,9 +55,7 @@
           clearInterval(int);
         }
         loadText.innerHTML = `${load}%`;
-        const foo = scale(load, 0, 100, 1, 0);
-        loadText.style.opacity = foo;
-        console.log("🚀 ~ file: index.html:61 ~ blurring ~ foo:", foo);
+        loadText.style.opacity = scale(load, 0, 100, 1, 0);
         bg.style.filter = `blur(${scale(load, 0, 100, 30, 0)}px)`;
       }
 
