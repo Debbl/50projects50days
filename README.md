@@ -10,3 +10,4 @@
 - [Progress Steps](https://50.aiwan.run/progress-steps/)
 - [Rotating Navigation](https://50.aiwan.run/rotaing-nav-animation/)
 - [Hidden Search](https://50.aiwan.run/hidden-search/)
+- [Blurry Loading](https://50.aiwan.run/blurry-loading/)
