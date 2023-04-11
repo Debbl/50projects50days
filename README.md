@@ -6,8 +6,9 @@
 
 # Projects
 
-- [Expanding Cards](https://50.aiwan.run/expanding-cards/)
-- [Progress Steps](https://50.aiwan.run/progress-steps/)
-- [Rotating Navigation](https://50.aiwan.run/rotaing-nav-animation/)
-- [Hidden Search](https://50.aiwan.run/hidden-search/)
-- [Blurry Loading](https://50.aiwan.run/blurry-loading/)
+1. [Expanding Cards](https://50.aiwan.run/expanding-cards/)
+2. [Progress Steps](https://50.aiwan.run/progress-steps/)
+3. [Rotating Navigation](https://50.aiwan.run/rotaing-nav-animation/)
+4. [Hidden Search](https://50.aiwan.run/hidden-search/)
+5. [Blurry Loading](https://50.aiwan.run/blurry-loading/)
+6. [Scroll Animation](https://50.aiwan.run/scroll-animation/)
