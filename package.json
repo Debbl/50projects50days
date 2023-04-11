@@ -9,11 +9,10 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "dependencies": {
-    "ejs": "^3.1.9",
-    "node-html-parser": "^6.1.5"
-  },
   "devDependencies": {
-    "html-minifier-terser": "^7.1.0"
+    "ejs": "^3.1.9",
+    "html-minifier-terser": "^7.1.0",
+    "node-html-parser": "^6.1.5",
+    "rimraf": "^5.0.0"
   }
 }
