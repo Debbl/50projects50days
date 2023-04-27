@@ -6,6 +6,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>50 Projects 50 Days</title>
     <style>
+      a {
+        all: unset;
+        color: gray;
+        cursor: pointer;
+      }
+      a:hover {
+        transform: scale(1.1);
+        color: #000;
+        text-decoration: underline;
+      }
+      main {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        height: 100vh;
+      }
       .footer {
         display: block;
         text-align: center;
@@ -14,19 +30,21 @@
   </head>
 
   <body>
-    <div>
-      <ul>
-        <% projectsInfo.forEach((info) => { %>
-        <li>
-          <a href="./<%= info.path %>"><%= info.title %></a>
-        </li>
-        <% }); %>
-      </ul>
-      <div class="footer">
+    <main>
+      <nav>
+        <ol>
+          <% projectsInfo.forEach((info) => { %>
+          <li>
+            <a href="./<%= info.path %>"><%= info.title %></a>
+          </li>
+          <% }); %>
+        </ol>
+      </nav>
+      <footer class="footer">
         <a href="https://github.com/Debbl/50projects50days">
           <img src="./github.svg" alt="github" />
         </a>
-      </div>
-    </div>
+      </footer>
+    </main>
   </body>
 </html>
