@@ -12,3 +12,4 @@
 4. [Hidden Search](https://50.aiwan.run/hidden-search/)
 5. [Blurry Loading](https://50.aiwan.run/blurry-loading/)
 6. [Scroll Animation](https://50.aiwan.run/scroll-animation/)
+7. [Split Landing Page](https://50.aiwan.run/split-landing-page/)
